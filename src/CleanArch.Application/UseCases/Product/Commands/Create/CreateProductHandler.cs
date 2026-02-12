@@ -10,7 +10,7 @@ namespace CleanArch.Application.UseCases.Product.Commands.Create
     {
         public async Task<CreateProductOutput> HandleAsync(CreateProductCommand command, CancellationToken cancellationToken)
         {
-            var existsCategory = await categoryRepository.ExistsByWhereAsync(category => category.Id == command.CategoryId, cancellationToken);
+            var existsCategory = await categoryRepository.ExistsByIdAsync(command.CategoryId, cancellationToken);
             
             if (!existsCategory)
                 throw new InvalidOperationException("Category not found.");

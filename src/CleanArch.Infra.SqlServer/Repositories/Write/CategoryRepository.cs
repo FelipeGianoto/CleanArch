@@ -32,13 +32,11 @@ namespace CleanArch.Infra.SqlServer.Repositories.Write
                 .FirstOrDefaultAsync(predicate, cancellationToken);
         }
 
-        public async Task<bool> ExistsByWhereAsync(
-            Expression<Func<Category, bool>> predicate,
-            CancellationToken cancellationToken)
+        public async Task<bool> ExistsByIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _dbSet
                 .AsNoTracking()
-                .AnyAsync(predicate, cancellationToken);
+                .AnyAsync(category => category.Id == id, cancellationToken);
         }
 
         public async Task UpdateAsync(Category category, CancellationToken cancellationToken)

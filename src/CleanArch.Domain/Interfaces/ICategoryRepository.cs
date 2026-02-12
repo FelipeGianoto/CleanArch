@@ -8,7 +8,7 @@ namespace CleanArch.Domain.Interfaces
         Task<Category?> GetByWhereAsync(Expression<Func<Category, bool>> predicate,
             CancellationToken cancellationToken);
 
-        Task<bool> ExistsByWhereAsync(Expression<Func<Category, bool>> predicate,
+        Task<bool> ExistsByIdAsync(int id,
             CancellationToken cancellationToken);
 
         Task CreateAsync(Category category, CancellationToken cancellationToken);
