@@ -8,11 +8,16 @@ namespace CleanArch.Infra.IoC
     {
         public static IServiceCollection AddInfrastructure(
             this IServiceCollection services,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            bool isTestEnviroment)
         {
+            if (!isTestEnviroment)
+            {
+                services.AddSqlServerInfra(configuration);
+            }
+
             services
                 .AddApplication()
-                .AddSqlServerInfra(configuration)
                 .AddRepositories();
 
             return services;
