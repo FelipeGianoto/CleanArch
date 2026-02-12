@@ -8,7 +8,9 @@ namespace CleanArch.Application.UseCases.Category.Query.List
     ) 
         : IQueryHandler<ListCategoryQuery, ListCategoryOutput>
     {
-        public async Task<ListCategoryOutput> HandleAsync(ListCategoryQuery query, CancellationToken cancellationToken)
+        public async Task<ListCategoryOutput> HandleAsync(
+            ListCategoryQuery query,
+            CancellationToken cancellationToken)
         {
             var categories = await categoryReadRepository.ListAsync(cancellationToken);
             return new ListCategoryOutput(categories);
