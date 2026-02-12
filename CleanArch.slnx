@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CleanArch.Application/CleanArch.Application.csproj" />
+    <Project Path="src/CleanArch.Domain/CleanArch.Domain.csproj" />
+    <Project Path="src/CleanArch.Infra.IoC/CleanArch.Infra.IoC.csproj" />
+    <Project Path="src/CleanArch.Infra.SqlServer/CleanArch.Infra.SqlServer.csproj" />
+    <Project Path="src/CleanArch.WebApi/CleanArch.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="CleanArch.UnitTests/CleanArch.UnitTests.csproj" Id="1514e836-9ce6-4bb1-ae13-341d5e036053" />
+  </Folder>
+</Solution>
